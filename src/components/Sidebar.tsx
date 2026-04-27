@@ -50,7 +50,7 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, collapsed }
         </div>
         {!collapsed && (
           <span className="font-bold text-lg tracking-tight" style={{ color: "var(--text)" }}>
-            Admin<span style={{ color: "var(--accent)" }}>Pro</span>
+            Daina<span style={{ color: "var(--accent)" }}>Admin</span>
           </span>
         )}
       </div>

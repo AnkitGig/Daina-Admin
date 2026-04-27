@@ -8,10 +8,10 @@
   --surface: #18181f;
   --surface-2: #222230;
   --border: #2e2e3e;
-  --accent: #7c5cfc;
-  --accent-2: #a78bfa;
-  --accent-glow: rgba(124, 92, 252, 0.25);
-  --text: #e8e8f0;
+  --accent: #FFCC00;
+  --accent-2: #ffdb4d;
+  --accent-glow: rgba(255, 204, 0, 0.4);
+  --text: #e0e0e0;
   --text-muted: #7a7a9a;
   --success: #22d3a5;
   --danger: #f87171;
