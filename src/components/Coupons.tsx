@@ -61,7 +61,6 @@ export default function Coupons() {
 
         {COUPONS.map((c, i) => {
           const s = statusStyle(c.status);
-          const pct = Math.round((c.uses / c.limit) * 100);
           return (
             <div key={c.id} className="grid grid-cols-12 px-5 py-4 items-center transition-all"
               style={{ borderBottom: i < COUPONS.length - 1 ? "1px solid var(--border)" : "none" }}
