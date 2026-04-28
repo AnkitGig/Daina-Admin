@@ -144,15 +144,24 @@ export default function UserManagement() {
 
                 {/* Actions */}
                 <div className="col-span-1 flex items-center justify-end gap-2">
-                  <button className="w-7 h-7 rounded-lg flex items-center justify-center transition-all" style={{ color: "var(--text-muted)" }}
+                  <button 
+                    title="View Activity"
+                    className="w-7 h-7 rounded-lg flex items-center justify-center transition-all" style={{ color: "var(--text-muted)" }}
                     onMouseEnter={e => { (e.currentTarget.style.background = "var(--surface-2)"); (e.currentTarget.style.color = "var(--accent)"); }}
                     onMouseLeave={e => { (e.currentTarget.style.background = "transparent"); (e.currentTarget.style.color = "var(--text-muted)"); }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                   </button>
-                  <button className="w-7 h-7 rounded-lg flex items-center justify-center transition-all" style={{ color: "var(--text-muted)" }}
-                    onMouseEnter={e => { (e.currentTarget.style.background = "rgba(248,113,113,0.1)"); (e.currentTarget.style.color = "var(--danger)"); }}
-                    onMouseLeave={e => { (e.currentTarget.style.background = "transparent"); (e.currentTarget.style.color = "var(--text-muted)"); }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+                  <button 
+                    title={user.status === "banned" ? "Unblock" : "Block"}
+                    className="w-7 h-7 rounded-lg flex items-center justify-center transition-all" 
+                    style={{ color: user.status === "banned" ? "var(--accent)" : "var(--danger)" }}
+                    onMouseEnter={e => { (e.currentTarget.style.background = user.status === "banned" ? "rgba(124,92,252,0.1)" : "rgba(248,113,113,0.1)"); }}
+                    onMouseLeave={e => { (e.currentTarget.style.background = "transparent"); }}>
+                    {user.status === "banned" ? (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                    ) : (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                    )}
                   </button>
                 </div>
               </div>

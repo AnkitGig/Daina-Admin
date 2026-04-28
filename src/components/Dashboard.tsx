@@ -3,8 +3,12 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import DashboardHome from "./DashboardHome";
 import UserManagement from "./UserManagement";
-import Coupons from "./Coupons";
+import DriverManagement from "./DriverManagement";
+import OrderManagement from "./OrderManagement";
+import Notifications from "./Notifications";
+import Payments from "./Payments";
 import Analytics from "./Analytics";
+import Support from "./Support";
 import Settings from "./Settings";
 
 interface DashboardProps {
@@ -12,10 +16,14 @@ interface DashboardProps {
 }
 
 const tabTitles: Record<string, string> = {
-  dashboard: "Dashboard",
+  dashboard: "Dashboard Overview",
+  drivers: "Driver Management",
+  orders: "Order Management",
   users: "User Management",
-  coupons: "Coupon Management",
-  analytics: "Analytics",
+  notifications: "Broadcast & Alerts",
+  payments: "Payments & Earnings",
+  analytics: "Reports & Analytics",
+  support: "Support & Tickets",
   settings: "Settings",
 };
 
@@ -26,9 +34,13 @@ export default function Dashboard({ onLogout }: DashboardProps) {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard": return <DashboardHome />;
+      case "drivers": return <DriverManagement />;
+      case "orders": return <OrderManagement />;
       case "users": return <UserManagement />;
-      case "coupons": return <Coupons />;
+      case "notifications": return <Notifications />;
+      case "payments": return <Payments />;
       case "analytics": return <Analytics />;
+      case "support": return <Support />;
       case "settings": return <Settings />;
       default: return <DashboardHome />;
     }
