@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import DashboardHome from "./DashboardHome";
 import UserManagement from "./UserManagement";
 import DriverManagement from "./DriverManagement";
+import DriverVerification from "./DriverVerification";
 import OrderManagement from "./OrderManagement";
 import Notifications from "./Notifications";
 import Payments from "./Payments";
@@ -18,6 +19,7 @@ interface DashboardProps {
 const tabTitles: Record<string, string> = {
   dashboard: "Dashboard Overview",
   drivers: "Driver Management",
+  verification: "Driver Document Verification",
   orders: "Order Management",
   users: "User Management",
   notifications: "Broadcast & Alerts",
@@ -35,6 +37,7 @@ export default function Dashboard({ onLogout }: DashboardProps) {
     switch (activeTab) {
       case "dashboard": return <DashboardHome />;
       case "drivers": return <DriverManagement />;
+      case "verification": return <DriverVerification />;
       case "orders": return <OrderManagement />;
       case "users": return <UserManagement />;
       case "notifications": return <Notifications />;
